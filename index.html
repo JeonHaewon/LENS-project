@@ -1,50 +1,57 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
+
   <meta name="description"
-        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
-  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+        content="LENS: Low-Frequency Eigen Noise Shaping for Efficient Diffusion Sampling. An efficient framework for improving distilled diffusion models through low-frequency noise modulation.">
+
+  <meta name="keywords"
+        content="LENS, Diffusion Models, Noise Modulation, Low-Frequency PCA, Efficient Sampling, NeurIPS 2026">
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nerfies: Deformable Neural Radiance Fields</title>
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
+  <title>LENS: Low-Frequency Eigen Noise Shaping for Efficient Diffusion Sampling</title>
 
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-
-    gtag('js', new Date());
-
-    gtag('config', 'G-PYVRSFMDRL');
-  </script>
-
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
         rel="stylesheet">
 
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/favicon.svg">
 
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <!-- Favicon -->
+  <link rel="icon"
+        type="image/svg+xml"
+        href="./static/images/favicon.svg">
+
+  <!-- JavaScript -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+
 </head>
+
 <body>
 
+<!-- Navigation -->
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+    <a role="button"
+       class="navbar-burger"
+       aria-label="menu"
+       aria-expanded="false">
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
@@ -53,83 +60,104 @@
 </nav>
 
 
+<!-- Title and Authors -->
 <section class="hero">
   <div class="hero-body">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">LENS: Low-Frequency Eigen Noise Shaping for Efficient Diffusion Sampling</h1>
+
+          <h1 class="title is-1 publication-title">
+            LENS: Low-Frequency Eigen Noise Shaping for Efficient Diffusion Sampling
+          </h1>
+
+          <!-- Authors -->
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://keunhong.com">Haewon Jeon</a><sup>1</sup>,</span>
+              Haewon Jeon<sup>1</sup>,
+            </span>
             <span class="author-block">
-              <a href="https://utkarshsinha.com">Si-Hyeon Lee</a><sup>1</sup>,</span>
+              Si-Hyeon Lee<sup>1</sup>
             </span>
           </div>
 
+          <!-- Affiliation -->
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>Korea Advanced Institute of Science and Technology (KAIST)</span>
+            <span class="author-block">
+              <sup>1</sup>Korea Advanced Institute of Science and Technology (KAIST)
+            </span>
           </div>
 
+          <!-- Publication Links -->
           <div class="column has-text-centered">
             <div class="publication-links">
-              <!-- PDF Link. -->
+
+              <!-- Paper -->
               <span class="link-block">
                 <a href="https://arxiv.org/pdf/2605.07253"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
+                    <i class="fas fa-file-pdf"></i>
                   </span>
                   <span>Paper</span>
                 </a>
               </span>
+
+              <!-- arXiv -->
               <span class="link-block">
                 <a href="https://arxiv.org/abs/2605.07253"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
-                      <i class="ai ai-arxiv"></i>
+                    <i class="ai ai-arxiv"></i>
                   </span>
                   <span>arXiv</span>
                 </a>
               </span>
-              <!-- Code Link. -->
+
+              <!-- Code -->
               <span class="link-block">
-                <a href="https://github.com/google/nerfies"
+                <a href="https://github.com/JeonHaewon/LENS"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
-                      <i class="fab fa-github"></i>
+                    <i class="fab fa-github"></i>
                   </span>
                   <span>Code</span>
-                  </a>
-            </div>
+                </a>
+              </span>
 
+            </div>
           </div>
+
         </div>
       </div>
     </div>
   </div>
 </section>
 
+
+<!-- Framework Overview -->
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
 
       <img src="./static/images/Framework_Figure.png"
-           alt="Framework Overview"
+           alt="LENS Framework Overview"
            style="width: 95%; height: auto;">
-
 
     </div>
   </div>
 </section>
 
 
+<!-- Abstract -->
 <section class="section">
   <div class="container is-max-desktop">
-    <!-- Abstract. -->
+
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
+
         <h2 class="title is-3">Abstract</h2>
+
         <div class="content has-text-justified">
           <p>
             Distilled diffusion models accelerate image generation by reducing
@@ -162,134 +190,152 @@
             prior methods.
           </p>
         </div>
+
       </div>
     </div>
-    <!--/ Abstract. -->
 
   </div>
 </section>
 
 
-
+<!-- Performance vs. Inference Time -->
 <section class="section" id="quality-efficiency">
   <div class="container is-max-desktop">
+
     <h2 class="title is-3 has-text-centered">
-      Performance vs. inference time
+      Performance vs. Inference Time
     </h2>
 
     <div class="content has-text-centered">
       <img
-        src="static/images/intro_figure.png"
-        alt="Performance vs. inference time"
-        style="width: 80%; max-width: 900px; height: auto;"
-      />
+        src="./static/images/intro_figure.png"
+        alt="Performance versus inference time"
+        style="width: 80%; max-width: 900px; height: auto;">
     </div>
 
     <div class="content has-text-justified">
       <p>
-      LENS achieves a favorable trade-off between generation quality and inference efficiency across three distilled diffusion models. By selectively modulating low-frequency noise components, LENS delivers comparable or improved image quality over HyperNoise with substantially lower inference overhead, while avoiding the costly iterative optimization required by ReNo.
+        LENS achieves a favorable trade-off between generation quality
+        and inference efficiency across three distilled diffusion models.
+        By selectively modulating low-frequency noise components,
+        LENS delivers comparable or improved image quality over
+        HyperNoise with substantially lower inference overhead,
+        while avoiding the costly iterative optimization required by ReNo.
       </p>
     </div>
+
   </div>
 </section>
 
 
+<!-- LENS Algorithm -->
 <section class="section" id="algorithm">
   <div class="container is-max-desktop">
+
     <h2 class="title is-3 has-text-centered">
       LENS Algorithm
     </h2>
 
     <div class="content has-text-centered">
       <img
-        src="static/images/algorithm.png"
+        src="./static/images/algorithm.png"
         alt="Overview of the LENS algorithm"
-        style="width: 45%; max-width: 900px; height: auto;"
-      />
+        style="width: 45%; max-width: 900px; height: auto;">
     </div>
+
   </div>
 </section>
 
 
+<!-- Efficiency Comparison -->
 <section class="section" id="efficiency">
   <div class="container is-max-desktop">
+
     <h2 class="title is-3 has-text-centered">
-      Efficiency Comparision
+      Efficiency Comparison
     </h2>
 
     <div class="content has-text-centered">
       <img
-        src="static/images/efficiency_result.png"
-        style="width: 80%; max-width: 900px; height: auto;"
-      />
+        src="./static/images/efficiency_result.png"
+        alt="Computational efficiency comparison"
+        style="width: 80%; max-width: 900px; height: auto;">
     </div>
+
   </div>
 </section>
 
 
+<!-- Generation Quality -->
 <section class="section" id="quality">
   <div class="container is-max-desktop">
+
     <h2 class="title is-3 has-text-centered">
       Generation Quality
     </h2>
 
     <div class="content has-text-centered">
       <img
-        src="static/images/quality_result.png"
-        style="width: 80%; max-width: 900px; height: auto;"
-      />
+        src="./static/images/quality_result.png"
+        alt="Generation quality comparison"
+        style="width: 80%; max-width: 900px; height: auto;">
     </div>
+
   </div>
 </section>
 
+
+<!-- Generation Results -->
 <section class="section" id="image_result">
   <div class="container is-max-desktop">
+
     <h2 class="title is-3 has-text-centered">
       Generation Results
     </h2>
 
     <div class="content has-text-centered">
       <img
-        src="static/images/images.png"
-        style="width: 70%; max-width: 900px; height: auto;"
-      />
+        src="./static/images/images.png"
+        alt="Qualitative image generation results"
+        style="width: 70%; max-width: 900px; height: auto;">
     </div>
+
   </div>
 </section>
 
 
-
+<!-- BibTeX -->
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
+
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{park2021nerfies,
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
+
+    <pre><code>@inproceedings{jeon2026lens,
+  title     = {{LENS}: Low-Frequency Eigen Noise Shaping for Efficient Diffusion Sampling},
+  author    = {Jeon, Haewon and Lee, Si-Hyeon},
+  booktitle = {Advances in Neural Information Processing Systems},
+  year      = {2026}
 }</code></pre>
+
   </div>
 </section>
 
 
+<!-- Footer and Template Attribution -->
 <footer class="footer">
   <div class="container">
     <div class="content has-text-centered">
 
-      <p>
+      <p class="is-size-7 has-text-grey">
         This website is based on the
-        <a href="https://nerfies.github.io/">
+        <a href="https://github.com/nerfies/nerfies.github.io">
           Nerfies
         </a>
         project page template, licensed under
         <a href="https://creativecommons.org/licenses/by-sa/4.0/">
           CC BY-SA 4.0
         </a>.
-      </p>
-
-      <p>
-        © 2026 LENS Authors.
-        Website template adapted from Nerfies.
+        The template has been modified for LENS.
       </p>
 
     </div>
